@@ -1,0 +1,85 @@
+p {
+  font-size: 30px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+.navbar-brand {
+  font-size: xx-large;
+  font-family: 'Lobster', cursive;
+}
+
+nav {
+  background-color: rgb(143, 226, 178);
+}
+
+.btn-info {
+  background-color: rgb(143, 212, 172);
+  color: darkblue;
+}
+
+nav a {
+  color: darkblue;
+}
+
+#welcome {
+  text-align: center;
+}
+
+h2 {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+}
+
+.each {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-control {
+  display: inline-block;
+  width: auto;
+}
+
+textarea {
+  margin-top: 10px;
+}
+
+.review {
+  font-size: 18px;
+  margin: 10px;
+  margin-bottom: 0px;
+  background-color: rgb(143, 212, 172);
+  padding: 10px;
+}
+
+img {
+  margin-top: 10px;
+}
+
+#review {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.list-group {
+  margin-top: 10px;
+}

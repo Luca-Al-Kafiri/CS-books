@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block main %}
+<form action="/search" method="post">
+    <div class="form-row justify-content-center">
+        <div class="col-auto">
+            <input autocomplete="off" autofocus class="form-control" name="info" placeholder="Title, Author or ISBN"
+                type="text">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-info" type="submit">search</button>
+        </div>
+    </div>
+</form>
+<div class="results">
+    {% for book in books %}
+    <div class="each">
+        <img class="img-thumbnail" src="http://covers.openlibrary.org/b/isbn/{{ book[1] }}-M.jpg" alt="book cover">
+        <a href="/book/{{ book[1] }}">{{ book[2] }}</a>
+        <small>By {{ book[3] }}</small>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

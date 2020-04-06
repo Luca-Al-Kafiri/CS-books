@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Book
+{% endblock %}
+
+{% block main %}
+<div class="book">
+  <img class="img-thumbnail" src="http://covers.openlibrary.org/b/isbn/{{ isbn }}-M.jpg" alt="book cover">
+  <ul class="list-group list-group-horizontal-md">
+    <li class="list-group-item"><strong>Title</strong>: {{ book[2] }}</li>
+    <li class="list-group-item"><strong>Author</strong>: {{ book[3] }}</li>
+    <li class="list-group-item"><strong>Year</strong>: {{ book[4] }}</li>
+    <li class="list-group-item"><strong>Goodreads reviews</strong>: {{ rating }}</li>
+    <li class="list-group-item"><strong>Goodreads rating</strong>: {{ average }}</li>
+  </ul>
+
+  <div class="form-group">
+    <form action="/book/{{ book[1] }}" method="POST">
+      <div class="text-center">
+        <select class="form-control" name="rate" required>
+          <option value="rating" selected disabled>Your rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+        <textarea autocomplete="off" autofocus name="review" cols="40" rows="5" maxlength="250"
+          placeholder="Your review" required></textarea>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-info post">Post</button>
+      </div>
+    </form>
+  </div>
+  <div id="review">
+    <h4>Reviews:</h4>
+    {% for review in reviews %}
+    <p class="review"><strong>Rate:{{ review[4]}}</strong><br>{{ review[1] }}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
